@@ -32,13 +32,13 @@ def main():
     with open(path) as f:
         fileContents = f.read()
 
-    # print(fileContents)
     wordCount = countWords(fileContents)
     charCount = countChars(fileContents)
     charCount.sort(reverse=True, key=sortOn)
+    
     print(f"--- Begin report of {path} ---")
     print(f"{wordCount} words found in the document")
-    # print(charCount)
+
     for dict in charCount:
         print(f"The {dict['char']} character was found {dict['num']} times")
 
